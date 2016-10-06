@@ -2,8 +2,8 @@
 //  main.swift
 //  SimpleCalc
 //
-//  Created by iGuest on 10/5/16.
-//  Copyright © 2016 iGuest. All rights reserved.
+//  Created by Thomas on 10/5/16.
+//  Copyright © 2016 Thomas. All rights reserved.
 //
 
 import Foundation
@@ -12,11 +12,16 @@ print("Enter an expression separated by returns or \"exit\" to close program")
 
 var loop: Bool = true
 
+let arguments = CommandLine.arguments
+//2 3 4 count
+if arguments.count > 1 {
+//    loop = false;
+    print("command line arguments not ready yet...")
+    exit(0)
+}
+
 while(loop){
     let input: String = readLine(strippingNewline: true)!
-    if input == "exit" {
-        exit(0)
-    }
     let inputArr = input.components(separatedBy: " ")
     if inputArr.count > 1{
         var op2: String = inputArr[inputArr.count - 1]
@@ -37,21 +42,25 @@ while(loop){
         // factorial
         else if op2 == "fact"{
             // get number
-            var num:Int = Int(inputArr[0])!
-            if num == 0 { // check 0
-                print("Result:", 1)
-            } else if(num < 0){ // check negative
-                print("Result:", "undefined")
-            }else { // calc factorial
-                var factorial:Int = 1
-                for index in 1...num {
-                    factorial *= index
+            if Int(inputArr[0]) != nil && inputArr.count == 2 {
+                var num:Int = Int(inputArr[0])!
+                if num == 0 { // check 0
+                    print("Result:", 1)
+                } else if(num < 0){ // check negative
+                    print("Result:", "undefined")
+                }else { // calc factorial
+                    var factorial:Int = 1
+                    for index in 1...num {
+                        factorial *= index
+                    }
+                    print("Result:", factorial)
                 }
-                print("Result:", factorial)
+            } else {
+                print("Error: not a valid number")
             }
         }
+        // not count, avg, or fact
         else {
-            
             print("Error: operation not recognized")
         }
     } else {
