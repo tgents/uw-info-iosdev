@@ -17,6 +17,113 @@
             endingLineNumber = "11"
             landmarkName = "CalcArrayPointsUnitTests"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.__deallocating_deinit"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.306119"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.init (invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; CalcArrayPointsTest.CalcArrayPointsUnitTests"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.307679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.__allocating_init (invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; CalcArrayPointsTest.CalcArrayPointsUnitTests"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.309109"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.init (selector : ObjectiveC.Selector) -&gt; CalcArrayPointsTest.CalcArrayPointsUnitTests"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.310371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.__allocating_init (selector : ObjectiveC.Selector) -&gt; CalcArrayPointsTest.CalcArrayPointsUnitTests"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.311611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.init () -&gt; CalcArrayPointsTest.CalcArrayPointsUnitTests"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.312878"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalcArrayPointsTest.CalcArrayPointsUnitTests.__allocating_init () -&gt; CalcArrayPointsTest.CalcArrayPointsUnitTests"
+                  moduleName = "CalcArrayPointsTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/CalcArrayPointsUnitTests.swift"
+                  timestampString = "497664793.314112"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
