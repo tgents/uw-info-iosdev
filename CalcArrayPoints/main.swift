@@ -37,7 +37,7 @@ func add(array: [Int]) -> Int {
 }
 
 func multiply(array: [Int]) -> Int {
-    var total: Int = 0
+    var total: Int = 1
     for i in 0...array.count-1 {
         total *= array[i]
     }

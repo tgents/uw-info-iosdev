@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9D1699501DA9A298009312B0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D16994F1DA9A298009312B0 /* main.swift */; };
-		9D1699631DA9BB22009312B0 /* CalcArrayPointsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1699621DA9BB22009312B0 /* CalcArrayPointsUnitTests.swift */; };
 		9D1699641DA9BC11009312B0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D16994F1DA9A298009312B0 /* main.swift */; };
+		9DE471D91DAC4DEC00D36374 /* CalcArrayPointsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE471D81DAC4DEC00D36374 /* CalcArrayPointsUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +29,7 @@
 		9D16994F1DA9A298009312B0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9D16995A1DA9BB0B009312B0 /* CalcArrayPointsTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcArrayPointsTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D16995E1DA9BB0B009312B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D1699621DA9BB22009312B0 /* CalcArrayPointsUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalcArrayPointsUnitTests.swift; path = ../../CalcArrayPointsUnitTests.swift; sourceTree = "<group>"; };
+		9DE471D81DAC4DEC00D36374 /* CalcArrayPointsUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcArrayPointsUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		9D16995B1DA9BB0B009312B0 /* CalcArrayPointsTest */ = {
 			isa = PBXGroup;
 			children = (
-				9D1699621DA9BB22009312B0 /* CalcArrayPointsUnitTests.swift */,
+				9DE471D81DAC4DEC00D36374 /* CalcArrayPointsUnitTests.swift */,
 				9D16995E1DA9BB0B009312B0 /* Info.plist */,
 			);
 			path = CalcArrayPointsTest;
@@ -184,7 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1699641DA9BC11009312B0 /* main.swift in Sources */,
-				9D1699631DA9BB22009312B0 /* CalcArrayPointsUnitTests.swift in Sources */,
+				9DE471D91DAC4DEC00D36374 /* CalcArrayPointsUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +340,7 @@
 				9D1699551DA9A298009312B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D16995F1DA9BB0B009312B0 /* Build configuration list for PBXNativeTarget "CalcArrayPointsTest" */ = {
 			isa = XCConfigurationList;
@@ -348,6 +349,7 @@
 				9D1699611DA9BB0B009312B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
