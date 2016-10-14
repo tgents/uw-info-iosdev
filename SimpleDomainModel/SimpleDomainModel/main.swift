@@ -82,7 +82,6 @@ public struct Money {
 open class Job {
   fileprivate var title : String
   fileprivate var type : JobType
-  fileprivate var type : Int
 
   public enum JobType {
     case Hourly(Double)
@@ -95,47 +94,72 @@ open class Job {
   }
   
   open func calculateIncome(_ hours: Int) -> Int {
-    if(JobType == JobType.Salary(<#T##Int#>)){
-      return
+    switch type{
+    case .Hourly(let rate):
+      return Int(Double(hours) * rate)
+    case .Salary(let rate):
+      return rate
     }
   }
   
+//  open func raise(_ amt : Double) {
+//    switch type{
+//    case .Hourly(let rate):
+//      type = JobType.Hourly(rate * amt / 100.0 + rate)
+//    case .Salary(let rate):
+//      type = JobType.Salary(Int(Double(rate) * amt / 100.0) + rate)
+//    }
+//  }
+  
   open func raise(_ amt : Double) {
+    switch type{
+    case .Hourly(let rate):
+      type = JobType.Hourly(amt + rate)
+    case .Salary(let rate):
+      type = JobType.Salary(Int(amt) + rate)
+    }
   }
 }
 
-//////////////////////////////////////
-//// Person
-////
-//open class Person {
-//  open var firstName : String = ""
-//  open var lastName : String = ""
-//  open var age : Int = 0
+////////////////////////////////////
+// Person
 //
-//  fileprivate var _job : Job? = nil
-//  open var job : Job? {
-//    get { }
-//    set(value) {
-//    }
-//  }
-//  
-//  fileprivate var _spouse : Person? = nil
-//  open var spouse : Person? {
-//    get { }
-//    set(value) {
-//    }
-//  }
-//  
-//  public init(firstName : String, lastName: String, age : Int) {
-//    self.firstName = firstName
-//    self.lastName = lastName
-//    self.age = age
-//  }
-//  
-//  open func toString() -> String {
-//  }
-//}
-//
+open class Person {
+  open var firstName : String = ""
+  open var lastName : String = ""
+  open var age : Int = 0
+
+  fileprivate var _job : Job? = nil
+  open var job : Job? {
+    get {
+      return _job
+    }
+    set(value) {
+      _job = value
+    }
+  }
+  
+  fileprivate var _spouse : Person? = nil
+  open var spouse : Person? {
+    get {
+      return _spouse
+    }
+    set(value) {
+      _spouse = value
+    }
+  }
+  
+  public init(firstName : String, lastName: String, age : Int) {
+    self.firstName = firstName
+    self.lastName = lastName
+    self.age = age
+  }
+  
+  open func toString() -> String {
+    return "[Person: firstName:\(firstName) lastName:\(lastName) age:\(age) job:\(job) spouse:\(spouse)]"
+  }
+}
+
 //////////////////////////////////////
 //// Family
 ////
