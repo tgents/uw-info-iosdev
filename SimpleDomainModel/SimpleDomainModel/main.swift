@@ -26,37 +26,40 @@ open class TestMe {
 public struct Money {
   public let acceptedCurrencies = ["USD", "GBP", "EUR", "CAN"]
   public var amount : Int
-  public var currency : String
+  public var currency : Currency
   
-  public func convert(_ to: String) -> Money {
+  public enum Currency {
+    case USD
+    case GBP
+    case EUR
+    case CAN
+  }
+  
+  public func convert(_ to: Currency) -> Money {
     var newAmount = convertToUSD(amount: amount, currency: currency)
     switch to{
-    case acceptedCurrencies[0]:
+    case Currency.USD:
       break
-    case acceptedCurrencies[1]:
+    case Currency.GBP:
       newAmount = newAmount / 2
-    case acceptedCurrencies[2]:
+    case Currency.EUR:
       newAmount = newAmount * 3 / 2
-    case acceptedCurrencies[3]:
+    case Currency.CAN:
       newAmount = newAmount * 5 / 4
-    default:
-      break
     }
     return Money(amount: newAmount, currency: to)
   }
   
-  private func convertToUSD(amount: Int, currency: String) -> Int{
+  private func convertToUSD(amount: Int, currency: Currency) -> Int{
     switch currency{
-    case acceptedCurrencies[0]:
+    case Currency.USD:
       return amount
-    case acceptedCurrencies[1]:
+    case Currency.GBP:
       return amount * 2
-    case acceptedCurrencies[2]:
+    case Currency.EUR:
       return amount * 2 / 3
-    case acceptedCurrencies[3]:
+    case Currency.CAN:
       return amount * 4 / 5
-    default:
-      return amount
     }
   }
   
