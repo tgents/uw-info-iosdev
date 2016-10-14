@@ -135,7 +135,11 @@ open class Person {
       return _job
     }
     set(value) {
-      _job = value
+      if(age < 16){
+        _job = nil
+      } else {
+        _job = value
+      }
     }
   }
   
@@ -145,7 +149,12 @@ open class Person {
       return _spouse
     }
     set(value) {
-      _spouse = value
+      if(age < 18){
+        _spouse = nil
+      } else {
+        _spouse = value
+      }
+      
     }
   }
   
@@ -160,21 +169,48 @@ open class Person {
   }
 }
 
-//////////////////////////////////////
-//// Family
-////
-//open class Family {
-//  fileprivate var members : [Person] = []
-//  
-//  public init(spouse1: Person, spouse2: Person) {
-//  }
-//  
-//  open func haveChild(_ child: Person) -> Bool {
-//  }
-//  
-//  open func householdIncome() -> Int {
-//  }
-//}
+////////////////////////////////////
+// Family
+//
+open class Family {
+  fileprivate var members : [Person] = []
+  
+  public init(spouse1: Person, spouse2: Person) {
+    spouse1.spouse = spouse2
+    spouse2.spouse = spouse1
+    members.append(spouse1)
+    members.append(spouse2)
+  }
+  
+  open func haveChild(_ child: Person) -> Bool {
+    if canHaveChild() {
+      members.append(child)
+      return true
+    }
+    return false
+  }
+  
+  private func canHaveChild() -> Bool {
+    for index in 0...members.count - 1 {
+      let age = members[index].age
+      if age >= 21 {
+        return true
+      }
+    }
+    return false
+  }
+  
+  open func householdIncome() -> Int {
+    var totalIncome: Int = 0
+    for index in 0...members.count - 1 {
+      let job = members[index].job
+      if job != nil{
+        totalIncome += job!.calculateIncome(2000)
+      }
+    }
+    return totalIncome
+  }
+}
 
 
 
