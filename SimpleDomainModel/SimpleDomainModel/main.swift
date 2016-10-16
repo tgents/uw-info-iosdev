@@ -21,9 +21,18 @@ open class TestMe {
 }
 
 ////////////////////////////////////
+// Domain Part 2
+//
+protocol Mathematics{
+  func add() -> Money
+  func subtract() -> Money
+}
+
+
+////////////////////////////////////
 // Money
 //
-public struct Money: CustomStringConvertible {
+public struct Money: CustomStringConvertible, Mathematics {
   
   public var description: String {
     return "\(currency)\(amount)"
@@ -89,7 +98,12 @@ print(Money(amount: 2, currency: Money.Currency.USD).description)
 ////////////////////////////////////
 // Job
 //
-open class Job {
+open class Job: CustomStringConvertible {
+  
+  public var description: String {
+    return "\(title) \(calculateIncome(1))"
+  }
+  
   fileprivate var title : String
   fileprivate var type : JobType
 
@@ -134,7 +148,11 @@ open class Job {
 ////////////////////////////////////
 // Person
 //
-open class Person {
+open class Person : CustomStringConvertible {
+  
+  public var description: String {
+    return "[Person: firstName:\(firstName) lastName:\(lastName) age:\(age) job:\(job) spouse:\(spouse)]"
+  }
   open var firstName : String = ""
   open var lastName : String = ""
   open var age : Int = 0
@@ -182,7 +200,12 @@ open class Person {
 ////////////////////////////////////
 // Family
 //
-open class Family {
+open class Family : CustomStringConvertible {
+  
+  public var description: String {
+    return "[Num: \(members.count), Income: \(householdIncome())]"
+  }
+  
   fileprivate var members : [Person] = []
   
   public init(spouse1: Person, spouse2: Person) {
