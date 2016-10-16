@@ -12,6 +12,7 @@ import SimpleDomainModel
 
 class ExtTests: XCTestCase {
     
+    // test prints
     func testPrintMoney() {
         let money = Money(amount: 10, currency: Money.Currency.USD)
         XCTAssert(money.description == "USD10.0")
@@ -40,16 +41,23 @@ class ExtTests: XCTestCase {
     
     let tenUSD = Money(amount: 10, currency: Money.Currency.USD)
     
+    // make sure add works
     func testAdd() {
         let total = tenUSD.add(tenUSD)
         XCTAssert(total.amount == 20)
         XCTAssert(total.currency == Money.Currency.USD)
     }
     
+    // make sure subtract works
     func testSubtract() {
         let total = tenUSD.add(tenUSD)
         XCTAssert(total.amount == 20)
         XCTAssert(total.currency == Money.Currency.USD)
+    }
+    
+    // Double extenstion test
+    func testExtension() {
+        XCTAssert(22.0.YEN.currency == Money.Currency.YEN)
     }
 
 }

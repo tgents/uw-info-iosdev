@@ -23,11 +23,18 @@ open class TestMe {
 ////////////////////////////////////
 // Domain Part 2
 //
-protocol Mathematics{
+protocol Mathematics {
   func add(_ to: Money) -> Money
   func subtract(_ from: Money) -> Money
 }
 
+extension Double {
+  var USD: Money { return Money(amount: self, currency: Money.Currency.USD)}
+  var GBP: Money { return Money(amount: self, currency: Money.Currency.GBP) }
+  var EUR: Money { return Money(amount: self, currency: Money.Currency.EUR) }
+  var CAN: Money { return Money(amount: self, currency: Money.Currency.CAN) }
+  var YEN: Money { return Money(amount: self, currency: Money.Currency.YEN) }
+}
 
 ////////////////////////////////////
 // Money
@@ -47,6 +54,7 @@ public struct Money: CustomStringConvertible, Mathematics {
     case GBP
     case EUR
     case CAN
+    case YEN
   }
   
   public func convert(_ to: Currency) -> Money {
@@ -60,6 +68,8 @@ public struct Money: CustomStringConvertible, Mathematics {
       newAmount = newAmount * 3 / 2
     case Currency.CAN:
       newAmount = newAmount * 5 / 4
+    case Currency.YEN:
+      newAmount = newAmount * 100
     }
     return Money(amount: newAmount, currency: to)
   }
@@ -74,6 +84,8 @@ public struct Money: CustomStringConvertible, Mathematics {
       return amount * 2 / 3
     case Currency.CAN:
       return amount * 4 / 5
+    case Currency.YEN:
+      return amount / 100
     }
   }
   
@@ -93,7 +105,6 @@ public struct Money: CustomStringConvertible, Mathematics {
   }
 }
 
-print(Money(amount: 2, currency: Money.Currency.USD).description)
 
 ////////////////////////////////////
 // Job
@@ -209,10 +220,12 @@ open class Family : CustomStringConvertible {
   fileprivate var members : [Person] = []
   
   public init(spouse1: Person, spouse2: Person) {
-    spouse1.spouse = spouse2
-    spouse2.spouse = spouse1
-    members.append(spouse1)
-    members.append(spouse2)
+    if spouse1.spouse == nil && spouse2.spouse == nil {
+      spouse1.spouse = spouse2
+      spouse2.spouse = spouse1
+      members.append(spouse1)
+      members.append(spouse2)
+    }
   }
   
   open func haveChild(_ child: Person) -> Bool {
