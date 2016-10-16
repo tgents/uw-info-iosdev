@@ -23,9 +23,14 @@ open class TestMe {
 ////////////////////////////////////
 // Money
 //
-public struct Money {
+public struct Money: CustomStringConvertible {
+  
+  public var description: String {
+    return "\(currency)\(amount)"
+  }
+
   public let acceptedCurrencies = ["USD", "GBP", "EUR", "CAN"]
-  public var amount : Int
+  public var amount : Double
   public var currency : Currency
   
   public enum Currency {
@@ -50,7 +55,7 @@ public struct Money {
     return Money(amount: newAmount, currency: to)
   }
   
-  private func convertToUSD(amount: Int, currency: Currency) -> Int{
+  private func convertToUSD(amount: Double, currency: Currency) -> Double{
     switch currency{
     case Currency.USD:
       return amount
@@ -78,6 +83,8 @@ public struct Money {
     return Money(amount: addAmount - from.amount, currency: from.currency)
   }
 }
+
+print(Money(amount: 2, currency: Money.Currency.USD).description)
 
 ////////////////////////////////////
 // Job
