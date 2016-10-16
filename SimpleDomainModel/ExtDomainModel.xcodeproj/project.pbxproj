@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9D0D177B1DB30624002E005D /* ExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D17791DB305B7002E005D /* ExtTests.swift */; };
+		9D0D177C1DB3298C002E005D /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68912F1CB6023B0018C340 /* PersonTests.swift */; };
+		9D0D177D1DB3298E002E005D /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68912D1CB5FEC70018C340 /* MoneyTests.swift */; };
+		9D0D177E1DB32990002E005D /* JobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE68912B1CB5FDC60018C340 /* JobTests.swift */; };
 		FE6891181CB5D8E40018C340 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6891171CB5D8E40018C340 /* main.swift */; };
 		FE6891251CB5D90B0018C340 /* SimpleDomainModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6891241CB5D90B0018C340 /* SimpleDomainModelTests.swift */; };
 		FE68912A1CB5D9130018C340 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6891171CB5D8E40018C340 /* main.swift */; };
@@ -194,6 +197,9 @@
 			files = (
 				FE68912A1CB5D9130018C340 /* main.swift in Sources */,
 				9D0D177B1DB30624002E005D /* ExtTests.swift in Sources */,
+				9D0D177C1DB3298C002E005D /* PersonTests.swift in Sources */,
+				9D0D177E1DB32990002E005D /* JobTests.swift in Sources */,
+				9D0D177D1DB3298E002E005D /* MoneyTests.swift in Sources */,
 				FE6891251CB5D90B0018C340 /* SimpleDomainModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
