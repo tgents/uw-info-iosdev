@@ -37,6 +37,20 @@ class ExtTests: XCTestCase {
         
         XCTAssert(family.description == "[Num: 2, Income: 1000]")
     }
+    
+    let tenUSD = Money(amount: 10, currency: Money.Currency.USD)
+    
+    func testAdd() {
+        let total = tenUSD.add(tenUSD)
+        XCTAssert(total.amount == 20)
+        XCTAssert(total.currency == Money.Currency.USD)
+    }
+    
+    func testSubtract() {
+        let total = tenUSD.add(tenUSD)
+        XCTAssert(total.amount == 20)
+        XCTAssert(total.currency == Money.Currency.USD)
+    }
 
 }
 

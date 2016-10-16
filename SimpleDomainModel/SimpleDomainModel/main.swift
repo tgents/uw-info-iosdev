@@ -24,8 +24,8 @@ open class TestMe {
 // Domain Part 2
 //
 protocol Mathematics{
-  func add() -> Money
-  func subtract() -> Money
+  func add(_ to: Money) -> Money
+  func subtract(_ from: Money) -> Money
 }
 
 
