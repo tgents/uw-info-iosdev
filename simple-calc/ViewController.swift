@@ -31,14 +31,16 @@ class ViewController: UIViewController {
     @IBAction func clear(_ sender: UIButton) {
         clearAll()
         valueField.text = ""
+        equationField.text = ""
     }
     
     @IBAction func numClick(_ sender: UIButton) {
         let num = Int(sender.titleLabel!.text!)!
         if(canEnterOp){
-            equationField.text = "\(equationField.text!)\(num)"
+            valueField.text = "\(valueField.text!)\(num)"
         } else {
-            equationField.text = "\(num)"
+            equationField.text = ""
+            valueField.text = "\(num)"
         }
         canEnterOp = true
     }
@@ -47,40 +49,44 @@ class ViewController: UIViewController {
         if(canEnterOp){
             canEnterOp = false
             let op = sender.titleLabel!.text!
-            nums.append(Int(equationField.text)!)
-            equationField.text = "\(op)"
+            nums.append(Int(valueField.text)!)
+            valueField.text = ""
             operation = op
         }
     }
     
     @IBAction func equalsClick(_ sender: UIButton) {
-        if(Int(equationField.text) != nil){
-            nums.append(Int(equationField.text)!)
+        if(Int(valueField.text) != nil){
+            nums.append(Int(valueField.text)!)
         }
         print(String(describing: nums))
         if nums.count >= 2 && operation != "" {
             switch operation{
             case "+":
+                equationField.text = "\(nums[0]) + \(nums[1])"
                 valueField.text = String(nums[0] + nums[1])
             case "-":
+                equationField.text = "\(nums[0]) - \(nums[1])"
                 valueField.text = String(nums[0] - nums[1])
             case "x":
+                equationField.text = "\(nums[0]) x \(nums[1])"
                 valueField.text = String(nums[0] * nums[1])
             case "÷":
-                valueField.text = String(nums[0] / nums[1])
+                equationField.text = "\(nums[0]) ÷ \(nums[1])"
+                valueField.text = String(Double(nums[0]) / Double(nums[1]))
             case "%":
+                equationField.text = "\(nums[0]) % \(nums[1])"
                 valueField.text = String(nums[0] % nums[1])
             case "COUNT":
+                equationField.text = "COUNT\(nums)"
                 valueField.text = String(nums.count)
             case "AVG":
                 var count: Double = 0
                 for item in nums{
-                        count += Double(item)
-                    
+                    count += Double(item)
                 }
+                equationField.text = "AVG\(nums)"
                 valueField.text = String(count/Double(nums.count))
-                valueField.text = String(nums[0] % nums[1])
-            
             default:
                 valueField.text = String(nums[1])
             }
@@ -90,6 +96,7 @@ class ViewController: UIViewController {
             for index in 1...nums[0] {
                 factorial *= index
             }
+            equationField.text = "\(nums[0])!"
             valueField.text = String(factorial)
             clearAll()
         }
@@ -97,7 +104,6 @@ class ViewController: UIViewController {
     }
 
     func clearAll(){
-        equationField.text = ""
         canEnterOp = false
         operation = ""
         nums = [Int]()
