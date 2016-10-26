@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var equationField: UITextView!
     @IBOutlet weak var valueField: UITextView!
     
-    var nums = [Int]()
+    var nums = [Double]()
     var operation : String = ""
     
     var canEnterOp: Bool = false
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func numClick(_ sender: UIButton) {
-        let num = Int(sender.titleLabel!.text!)!
+        let num = sender.titleLabel!.text!
         if(canEnterOp){
             valueField.text = "\(valueField.text!)\(num)"
         } else {
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         if(canEnterOp){
             canEnterOp = false
             let op = sender.titleLabel!.text!
-            nums.append(Int(valueField.text)!)
+            nums.append(Double(valueField.text)!)
             valueField.text = ""
             operation = op
         }
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     
     @IBAction func equalsClick(_ sender: UIButton) {
         if(Int(valueField.text) != nil){
-            nums.append(Int(valueField.text)!)
+            nums.append(Double(valueField.text)!)
         }
         print(String(describing: nums))
         if nums.count >= 2 && operation != "" {
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
                 valueField.text = String(Double(nums[0]) / Double(nums[1]))
             case "%":
                 equationField.text = "\(nums[0]) % \(nums[1])"
-                valueField.text = String(nums[0] % nums[1])
+                valueField.text = String(nums[0].truncatingRemainder(dividingBy: nums[1]))
             case "COUNT":
                 equationField.text = "COUNT\(nums)"
                 valueField.text = String(nums.count)
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
             clearAll()
         } else if operation == "!" {
             var factorial:Int = 1
-            for index in 1...nums[0] {
+            for index in 1...Int(nums[0]) {
                 factorial *= index
             }
             equationField.text = "\(nums[0])!"
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     func clearAll(){
         canEnterOp = false
         operation = ""
-        nums = [Int]()
+        nums = [Double]()
     }
 }
 
