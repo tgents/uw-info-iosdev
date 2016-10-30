@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var equationField: UITextView!
-    @IBOutlet weak var valueField: UITextView!
+    
+    @IBOutlet weak var equationField: UILabel!
+    @IBOutlet weak var valueField: UILabel!
     
     var nums = [Double]()
     var operation : String = ""
@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        valueField.adjustsFontSizeToFitWidth = true
+        equationField.adjustsFontSizeToFitWidth = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -49,15 +51,15 @@ class ViewController: UIViewController {
         if(canEnterOp){
             canEnterOp = false
             let op = sender.titleLabel!.text!
-            nums.append(Double(valueField.text)!)
+            nums.append(Double(valueField.text!)!)
             valueField.text = ""
             operation = op
         }
     }
     
     @IBAction func equalsClick(_ sender: UIButton) {
-        if(Int(valueField.text) != nil){
-            nums.append(Double(valueField.text)!)
+        if(Int(valueField.text!) != nil){
+            nums.append(Double(valueField.text!)!)
         }
         print(String(describing: nums))
         if nums.count >= 2 && operation != "" {
