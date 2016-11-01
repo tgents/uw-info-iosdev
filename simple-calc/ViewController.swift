@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var operation : String = ""
     
     var canEnterOp: Bool = false
+    var history: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,9 @@ class ViewController: UIViewController {
     @IBAction func numClick(_ sender: UIButton) {
         let num = sender.titleLabel!.text!
         if(canEnterOp){
-            valueField.text = "\(valueField.text!)\(num)"
+            if(num != "." || (num == "." && !valueField.text!.contains("."))){
+                valueField.text = "\(valueField.text!)\(num)"
+            }
         } else {
             equationField.text = ""
             valueField.text = "\(num)"
@@ -92,6 +95,7 @@ class ViewController: UIViewController {
             default:
                 valueField.text = String(nums[1])
             }
+            history.append(equationField.text! + " = " + valueField.text!)
             clearAll()
         } else if operation == "!" {
             var factorial:Int = 1
@@ -100,15 +104,20 @@ class ViewController: UIViewController {
             }
             equationField.text = "\(nums[0])!"
             valueField.text = String(factorial)
+            history.append(equationField.text! + " = " + valueField.text!)
             clearAll()
         }
-        
     }
 
     func clearAll(){
         canEnterOp = false
         operation = ""
         nums = [Double]()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondViewController = segue.destination as! HistoryViewController
+        secondViewController.data = history
     }
 }
 

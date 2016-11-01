@@ -14,6 +14,7 @@
 		9D7FD6701DBEBBA5004DBD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7FD66E1DBEBBA5004DBD19 /* LaunchScreen.storyboard */; };
 		9D7FD67B1DBEBBA5004DBD19 /* simple_calcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FD67A1DBEBBA5004DBD19 /* simple_calcTests.swift */; };
 		9D7FD6861DBEBBA5004DBD19 /* simple_calcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FD6851DBEBBA5004DBD19 /* simple_calcUITests.swift */; };
+		9DA6B5131DC83F490079431B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B5121DC83F490079431B /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9D7FD6811DBEBBA5004DBD19 /* simple-calcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple-calcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7FD6851DBEBBA5004DBD19 /* simple_calcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_calcUITests.swift; sourceTree = "<group>"; };
 		9D7FD6871DBEBBA5004DBD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA6B5121DC83F490079431B /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				9D7FD66C1DBEBBA5004DBD19 /* Assets.xcassets */,
 				9D7FD66E1DBEBBA5004DBD19 /* LaunchScreen.storyboard */,
 				9D7FD6711DBEBBA5004DBD19 /* Info.plist */,
+				9DA6B5121DC83F490079431B /* HistoryViewController.swift */,
 			);
 			path = "simple-calc";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA6B5131DC83F490079431B /* HistoryViewController.swift in Sources */,
 				9D7FD6681DBEBBA5004DBD19 /* ViewController.swift in Sources */,
 				9D7FD6661DBEBBA5004DBD19 /* AppDelegate.swift in Sources */,
 			);
