@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4i-dc-tlV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mountain's aren't funny." textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4i-dc-tlV">
                                 <frame key="frameInset" minX="16" minY="155" width="343" height="356"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -59,8 +59,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mountains aren't funny." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPt-Oh-7WB">
-                                <frame key="frameInset" minX="-15" minY="165" width="405" height="337"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I can rewrite history." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPt-Oh-7WB">
+                                <frame key="frameInset" minX="16" minY="165" width="343" height="337"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -77,7 +77,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="DadJoke" id="EHC-JC-w5U"/>
+                    <tabBarItem key="tabBarItem" title="Dad" id="EHC-JC-w5U"/>
                     <navigationItem key="navigationItem" id="rkS-WT-JrH">
                         <barButtonItem key="rightBarButtonItem" title="Flip" id="8sm-VY-18l"/>
                     </navigationItem>
@@ -101,25 +101,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why do scuba divers fall backwards off of the boat?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xl-6p-eb0">
+                                <frame key="frameInset" minX="4.27%" minY="27.44%" width="91.47%" height="45.13%"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgv-yH-qha">
-                                <frame key="frameInset" width="13.07%" height="5.25%" maxX="23" maxY="57"/>
+                                <frame key="frameInset" width="12.81%" height="5.25%" maxX="16" maxY="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="goodJokeNext:" destination="pBA-bR-rTh" eventType="touchUpInside" id="6q8-Er-FUn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="haha joke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xl-6p-eb0">
-                                <frame key="frameInset" minX="5.07%" minY="27.44%" width="89.60%" height="45.13%"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="GoodJoke" id="3pM-0u-mot"/>
+                    <tabBarItem key="tabBarItem" title="Good" id="3pM-0u-mot"/>
                     <connections>
                         <outlet property="goodJokeLabel" destination="0xl-6p-eb0" id="Hxp-Se-ixo"/>
                         <outlet property="goodJokeView" destination="Jph-yV-ltM" id="dtP-GT-h9S"/>
@@ -139,9 +139,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="pBA-bR-rTh" kind="relationship" relationship="viewControllers" id="MhR-HA-FtX"/>
                         <segue destination="YGU-AW-dbi" kind="relationship" relationship="viewControllers" id="Bfw-KV-myz"/>
                         <segue destination="RVy-1X-jp6" kind="relationship" relationship="viewControllers" id="xZb-RO-DXz"/>
-                        <segue destination="pBA-bR-rTh" kind="relationship" relationship="viewControllers" id="MhR-HA-FtX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qu-ng-Np2" userLabel="First Responder" sceneMemberID="firstResponder"/>

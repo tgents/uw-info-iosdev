@@ -37,10 +37,10 @@ class ViewController: UIViewController {
         sender.setTitle("", for: UIControlState.normal)
         UIView.transition(with: goodJokeView, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromRight, animations: nil, completion: {(_ : Bool) -> Void in
                             if(self.goodJokeStatus){
-                                self.goodJokeLabel.text = "haha punchline"
+                                self.goodJokeLabel.text = "Because if they fell forward, they'd still be in the boat."
                                 sender.setTitle("Back", for: UIControlState.normal)
                             } else {
-                                self.goodJokeLabel.text = "haha joke"
+                                self.goodJokeLabel.text = "Why do scuba divers fall backwards off of the boat?"
                                 sender.setTitle("Next", for: UIControlState.normal)
                             }
                             self.goodJokeStatus = !self.goodJokeStatus
@@ -53,10 +53,10 @@ class ViewController: UIViewController {
         sender.setTitle("", for: UIControlState.normal)
         UIView.transition(with: punJokeView, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromRight, animations: nil, completion: {(_ : Bool) -> Void in
             if(self.punJokeStatus){
-                self.punJokeLabel.text = "haha punchline"
+                self.punJokeLabel.text = "They're hill areas."
                 sender.setTitle("Back", for: UIControlState.normal)
             } else {
-                self.punJokeLabel.text = "haha pun"
+                self.punJokeLabel.text = "Mountains aren't funny."
                 sender.setTitle("Next", for: UIControlState.normal)
             }
             self.punJokeStatus = !self.punJokeStatus
@@ -69,10 +69,10 @@ class ViewController: UIViewController {
         sender.setTitle("", for: UIControlState.normal)
         UIView.transition(with: dadJokeView, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromRight, animations: nil, completion: {(_ : Bool) -> Void in
             if(self.dadJokeStatus){
-                self.dadJokeLabel.text = "They're hill areas."
+                self.dadJokeLabel.text = "history"
                 sender.setTitle("Back", for: UIControlState.normal)
             } else {
-                self.dadJokeLabel.text = "Mountains aren't funny."
+                self.dadJokeLabel.text = "I can rewrite history."
                 sender.setTitle("Next", for: UIControlState.normal)
             }
             self.dadJokeStatus = !self.dadJokeStatus
