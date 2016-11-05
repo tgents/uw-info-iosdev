@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		9D5ECB5B1DCA8F3100FA0BD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ECB5A1DCA8F3100FA0BD5 /* AppDelegate.swift */; };
-		9D5ECB5D1DCA8F3100FA0BD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ECB5C1DCA8F3100FA0BD5 /* ViewController.swift */; };
 		9D5ECB601DCA8F3100FA0BD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5ECB5E1DCA8F3100FA0BD5 /* Main.storyboard */; };
 		9D5ECB621DCA8F3100FA0BD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5ECB611DCA8F3100FA0BD5 /* Assets.xcassets */; };
 		9D5ECB651DCA8F3100FA0BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5ECB631DCA8F3100FA0BD5 /* LaunchScreen.storyboard */; };
+		9DD144681DCD45060018FAA2 /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD144671DCD45060018FAA2 /* QuizTableViewController.swift */; };
+		9DD1446A1DCD481C0018FAA2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD144691DCD481C0018FAA2 /* QuizTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D5ECB571DCA8F3100FA0BD5 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5ECB5A1DCA8F3100FA0BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D5ECB5C1DCA8F3100FA0BD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D5ECB5F1DCA8F3100FA0BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D5ECB611DCA8F3100FA0BD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D5ECB641DCA8F3100FA0BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D5ECB661DCA8F3100FA0BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DD144671DCD45060018FAA2 /* QuizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
+		9DD144691DCD481C0018FAA2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				9D5ECB5A1DCA8F3100FA0BD5 /* AppDelegate.swift */,
-				9D5ECB5C1DCA8F3100FA0BD5 /* ViewController.swift */,
 				9D5ECB5E1DCA8F3100FA0BD5 /* Main.storyboard */,
 				9D5ECB611DCA8F3100FA0BD5 /* Assets.xcassets */,
 				9D5ECB631DCA8F3100FA0BD5 /* LaunchScreen.storyboard */,
 				9D5ECB661DCA8F3100FA0BD5 /* Info.plist */,
+				9DD144671DCD45060018FAA2 /* QuizTableViewController.swift */,
+				9DD144691DCD481C0018FAA2 /* QuizTableViewCell.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -136,8 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D5ECB5D1DCA8F3100FA0BD5 /* ViewController.swift in Sources */,
+				9DD144681DCD45060018FAA2 /* QuizTableViewController.swift in Sources */,
 				9D5ECB5B1DCA8F3100FA0BD5 /* AppDelegate.swift in Sources */,
+				9DD1446A1DCD481C0018FAA2 /* QuizTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				9D5ECB6B1DCA8F3100FA0BD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
