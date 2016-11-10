@@ -10,7 +10,7 @@ import UIKit
 
 class QuizTableViewController: UITableViewController {
     
-    let questions:[String] = ["Mathematics", "Marvel Super Heroes", "Science"]
+    let quizzes:[String] = ["Mathematics", "Marvel Super Heroes", "Science"]
     let descriptions:[String] = ["stuff about math", "super heros from Marvel", "science!"]
     let images:[String] = ["mathicon", "marvelicon", "scienceicon"]
     
@@ -44,7 +44,7 @@ class QuizTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
+        return quizzes.count
     }
 
     
@@ -52,7 +52,7 @@ class QuizTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath) as! QuizTableViewCell
         
-        cell.titleLabel.text = questions[indexPath.row]
+        cell.titleLabel.text = quizzes[indexPath.row]
         cell.descriptionLabel.text = descriptions[indexPath.row]
         cell.picture.image = UIImage(named: images[indexPath.row])
 
