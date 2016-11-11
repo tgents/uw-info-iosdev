@@ -46,7 +46,6 @@
                                     <outlet property="descriptionLabel" destination="5fI-gu-3rm" id="aez-lK-30d"/>
                                     <outlet property="picture" destination="jTX-rJ-ZPb" id="lze-N8-4fn"/>
                                     <outlet property="titleLabel" destination="b9T-0D-zqe" id="aJz-dy-aoc"/>
-                                    <segue destination="PkP-Xy-0ZJ" kind="show" id="haR-tR-zzd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,6 +57,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="PkP-Xy-0ZJ" kind="show" identifier="toQuestion" id="8DW-jH-HqV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pqk-lv-qqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,6 +164,10 @@
         <scene sceneID="zad-Hp-C0q">
             <objects>
                 <viewController title="Answer" id="TBF-rh-xs9" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i45-HV-tF8"/>
+                        <viewControllerLayoutGuide type="bottom" id="8wA-xl-lWn"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bHH-BA-TEo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +214,10 @@
         <scene sceneID="1Mv-MJ-eny">
             <objects>
                 <viewController title="Result" id="BYx-vA-Ta2" customClass="ResultViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eiV-tC-lyr"/>
+                        <viewControllerLayoutGuide type="bottom" id="BxM-Is-Oyf"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8TX-IK-yDK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,7 +233,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="a30-xB-TUH">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="clC-Q8-rkz">
+                        <barButtonItem key="leftBarButtonItem" title="Finish" id="clC-Q8-rkz">
                             <connections>
                                 <segue destination="Og6-hU-Q9E" kind="show" id="MVM-Bd-OUG"/>
                             </connections>
@@ -236,7 +246,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FXo-88-Tzb"/>
-        <segue reference="vKm-z1-jhD"/>
+        <segue reference="MVM-Bd-OUG"/>
+        <segue reference="8DW-jH-HqV"/>
     </inferredMetricsTieBreakers>
 </document>

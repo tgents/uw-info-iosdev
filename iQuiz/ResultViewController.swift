@@ -10,7 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    var questions: [String: Any]?
+    var questions: [Any]?
     var score: Int?
 
     override func viewDidLoad() {

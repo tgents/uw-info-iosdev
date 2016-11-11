@@ -10,9 +10,97 @@ import UIKit
 
 class QuizTableViewController: UITableViewController {
     
-    let quizzes:[String] = ["Mathematics", "Marvel Super Heroes", "Science"]
-    let descriptions:[String] = ["stuff about math", "super heros from Marvel", "science!"]
-    let images:[String] = ["mathicon", "marvelicon", "scienceicon"]
+    let questions =
+        ["Mathematics":
+            ["description":"stuff about math",
+             "icon": "mathicon",
+             "questions":
+                [
+                    [
+                    "text":"What is fire?",
+                    "answer":"1",
+                    "answers":
+                        [
+                            "One of the four classical elements",
+                            "A magical reaction given to us by God",
+                            "A band that hasn't yet been discovered",
+                            "Fire! Fire! Fire! heh-heh"
+                        ]
+                    ],
+                    [
+                        "text":"What is ATP?",
+                        "answer":"4",
+                        "answers":
+                            [
+                                "One of thos Jeep things",
+                                "A magical reaction given to us by God",
+                                "A band that hasn't yet been discovered",
+                                "Adenosine triphosphate"
+                        ]
+                    ]
+                ],
+            ],
+         "Marvel Super Heroes":
+            ["description":"super heros from Marvel",
+             "icon": "marvelicon",
+             "questions":
+                [
+                    [
+                        "text":"Who is Iron Man?",
+                        "answer":"1",
+                        "answers":
+                            [
+                                "Tony Stark",
+                                "Obadiah Stane",
+                                "A rock hit by Megadeth",
+                                "Nobody knows"
+                        ]
+                    ],
+                    [
+                        "text":"Who founded the X-Men?",
+                        "answer":"2",
+                        "answers":
+                            [
+                                "Tony Stark",
+                                "Professor X",
+                                "The X-Institute",
+                                "Erik Lensherr"
+                        ]
+                    ]
+                ],
+            ],
+         "Science":
+            ["description":"science!",
+             "icon": "scienceicon",
+             "questions":
+                [
+                    [
+                        "text":"What is 2 + 2?",
+                        "answer":"1",
+                        "answers":
+                            [
+                                "4",
+                                "22",
+                                "An irrational number",
+                                "Nobody knows"
+                        ]
+                    ],
+                    [
+                        "text":"What is 10 ÷ 5?",
+                        "answer":"2",
+                        "answers":
+                            [
+                                "4",
+                                "2",
+                                "An irrational number",
+                                "Nobody knows"
+                        ]
+                    ]
+                ],
+            ]
+    ]
+    
+    var selectedQuestions:[Any]?
     
     
     override func viewDidLoad() {
@@ -44,65 +132,35 @@ class QuizTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return quizzes.count
+        return questions.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath) as! QuizTableViewCell
-        
-        cell.titleLabel.text = quizzes[indexPath.row]
-        cell.descriptionLabel.text = descriptions[indexPath.row]
-        cell.picture.image = UIImage(named: images[indexPath.row])
+        let key = Array(questions.keys)[indexPath.row]
+        let dictionary = questions[key]! as [String:Any]
+        cell.titleLabel.text = key
+        cell.descriptionLabel.text = dictionary["description"] as! String
+        cell.picture.image = UIImage(named: dictionary["icon"] as! String)
 
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let key = Array(questions.keys)[indexPath.row]
+        let dictionary = questions[key]! as [String:Any]
+        selectedQuestions = dictionary["questions"] as! [Any]
+        performSegue(withIdentifier: "toQuestion", sender: self)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let other = segue.destination as! QuestionViewController
+        other.questions = selectedQuestions
+        other.qIndex = 0
+        other.score = 0
     }
-    */
+ 
 
 }

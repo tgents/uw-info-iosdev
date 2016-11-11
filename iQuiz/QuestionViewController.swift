@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    var questions: [String: Any]?
+    var questions: [Any]?
     var qIndex: Int?
     var score: Int?
 
@@ -21,6 +21,13 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let currentQuestion = questions![qIndex!] as! [String:Any]
+        let text = currentQuestion["text"] as! String
+        let answers = currentQuestion["answers"] as! [String]
+        Question.text = text
+        for index in 0..<Answers.count {
+            Answers[index].setTitle(answers[index], for: .normal)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -44,11 +51,14 @@ class QuestionViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let other = segue.destination as! AnswerViewController
-        other.score = score
-        other.questions = questions
-        other.answer = selectedButton
-        other.qIndex = qIndex
+        if segue.identifier == "toAnswer" {
+            let other = segue.destination as! AnswerViewController
+            other.score = score
+            other.questions = questions
+            other.answer = selectedButton
+            other.qIndex = qIndex
+        }
+        
     }
 
 

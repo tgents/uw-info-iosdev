@@ -10,7 +10,7 @@ import UIKit
 
 class AnswerViewController: UIViewController {
     
-    var questions: [String: Any]?
+    var questions: [Any]?
     var answer: Int?
     var qIndex: Int?
     var score: Int?
@@ -44,6 +44,7 @@ class AnswerViewController: UIViewController {
             let other = segue.destination as! QuestionViewController
             other.score = score
             other.questions = questions
+            other.qIndex = qIndex! + 1
         }
     }
 
