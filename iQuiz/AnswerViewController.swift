@@ -15,9 +15,23 @@ class AnswerViewController: UIViewController {
     var qIndex: Int?
     var score: Int?
 
+    @IBOutlet weak var status: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let currentQuestion = questions![qIndex!] as! [String:Any]
+        let text = currentQuestion["text"] as! String
+        let rightAnswer = Int(currentQuestion["answer"] as! String)! - 1
+        let answers = currentQuestion["answers"] as! [String]
+        if answer == rightAnswer {
+            score! += 1
+            status.text = "Correct!\n"
+        } else {
+            status.text = "Incorrect :(\n"
+        }
+        status.text = "\(status.text!)\(text)\n"
+        status.text = "\(status.text!)Answer: \(answers[rightAnswer])"
+        
         // Do any additional setup after loading the view.
     }
 

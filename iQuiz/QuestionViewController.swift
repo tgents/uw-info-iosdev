@@ -43,7 +43,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func answerselect(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.blue
+        sender.backgroundColor = UIColor.cyan
         if selectedButton != -1{
             Answers[selectedButton].backgroundColor = UIColor.white
         }

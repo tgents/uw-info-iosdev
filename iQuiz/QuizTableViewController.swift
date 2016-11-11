@@ -17,25 +17,25 @@ class QuizTableViewController: UITableViewController {
              "questions":
                 [
                     [
-                    "text":"What is fire?",
-                    "answer":"1",
-                    "answers":
-                        [
-                            "One of the four classical elements",
-                            "A magical reaction given to us by God",
-                            "A band that hasn't yet been discovered",
-                            "Fire! Fire! Fire! heh-heh"
+                        "text":"What is 2 + 2?",
+                        "answer":"1",
+                        "answers":
+                            [
+                                "4",
+                                "22",
+                                "An irrational number",
+                                "Nobody knows"
                         ]
                     ],
                     [
-                        "text":"What is ATP?",
-                        "answer":"4",
+                        "text":"What is 10 ÷ 5?",
+                        "answer":"2",
                         "answers":
                             [
-                                "One of thos Jeep things",
-                                "A magical reaction given to us by God",
-                                "A band that hasn't yet been discovered",
-                                "Adenosine triphosphate"
+                                "4",
+                                "2",
+                                "An irrational number",
+                                "Nobody knows"
                         ]
                     ]
                 ],
@@ -75,25 +75,25 @@ class QuizTableViewController: UITableViewController {
              "questions":
                 [
                     [
-                        "text":"What is 2 + 2?",
+                        "text":"What is fire?",
                         "answer":"1",
                         "answers":
                             [
-                                "4",
-                                "22",
-                                "An irrational number",
-                                "Nobody knows"
+                                "One of the four classical elements",
+                                "A magical reaction given to us by God",
+                                "A band that hasn't yet been discovered",
+                                "Fire! Fire! Fire! heh-heh"
                         ]
                     ],
                     [
-                        "text":"What is 10 ÷ 5?",
-                        "answer":"2",
+                        "text":"What is ATP?",
+                        "answer":"4",
                         "answers":
                             [
-                                "4",
-                                "2",
-                                "An irrational number",
-                                "Nobody knows"
+                                "One of those Jeep things",
+                                "A magical reaction given to us by God",
+                                "A band that hasn't yet been discovered",
+                                "Adenosine triphosphate"
                         ]
                     ]
                 ],
@@ -137,8 +137,8 @@ class QuizTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath) as! QuizTableViewCell
+        
         let key = Array(questions.keys)[indexPath.row]
         let dictionary = questions[key]! as [String:Any]
         cell.titleLabel.text = key
@@ -149,8 +149,11 @@ class QuizTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let key = Array(questions.keys)[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
+        let key = cell.titleLabel.text!
+        print(key)
         let dictionary = questions[key]! as [String:Any]
+        print(dictionary)
         selectedQuestions = dictionary["questions"] as! [Any]
         performSegue(withIdentifier: "toQuestion", sender: self)
     }
