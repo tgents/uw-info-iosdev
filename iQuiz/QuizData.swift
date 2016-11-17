@@ -10,23 +10,33 @@ import UIKit
 
 class QuizData: NSObject {
     static let shared = QuizData()
+    static let path = Bundle.main.path(forResource: "data", ofType: "txt")!
+    static let urlToRequest: String = "http://tednewardsandbox.site44.com/questions.json"
     var data: [[String:Any]]?
-    let path = Bundle.main.path(forResource: "data", ofType: "txt")!
     override init() {
-        let urlToRequest: String = "http://tednewardsandbox.site44.com/question.json"
         do{
-            let content = NSData(contentsOf: URL(string: urlToRequest)!)
+            var content = NSData(contentsOf: URL(string: QuizData.urlToRequest)!)
+            if(content == nil){
+                content = NSData(contentsOfFile: QuizData.path)
+            }
             if(content != nil){
                 data = try JSONSerialization.jsonObject(with: content as! Data, options: []) as! [[String:Any]]
-//                let saveData = data as! NSArray
-//                saveData.write(toFile: path, atomically: true)
+                QuizData.save(content!)
             }
-//            else {
-//                data = NSArray(contentsOfFile:path) as! [[String : Any]]?
-//            }
             
         } catch {
             print("ERROR AAAH", error)
+        }
+    }
+    
+    static func save(_ content:NSData){
+        do {
+            if let JSONString = String(data: content as Data, encoding: String.Encoding.utf8) {
+                print(JSONString)
+                try JSONString.write(toFile: QuizData.path, atomically: true, encoding: String.Encoding.utf8)
+            }
+        } catch {
+            print(error)
         }
     }
 }

@@ -64,11 +64,11 @@ class QuizTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
-        let key = cell.titleLabel.text!
-        print(key)
+        //let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
+        //let key = cell.titleLabel.text!
+        //print(key)
         let dictionary = questions![indexPath.row] as [String:Any]
-        print(dictionary["questions"])
+        //print(dictionary["questions"])
         selectedQuestions = dictionary["questions"] as! [[String:Any]]
         performSegue(withIdentifier: "toQuestion", sender: self)
     }
