@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1846B81DDD07FA0079D933 /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1846B71DDD07FA0079D933 /* QuizData.swift */; };
+		9D1846BA1DDD262F0079D933 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D1846B91DDD262F0079D933 /* data.txt */; };
 		9D5ECB5B1DCA8F3100FA0BD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ECB5A1DCA8F3100FA0BD5 /* AppDelegate.swift */; };
 		9D5ECB601DCA8F3100FA0BD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5ECB5E1DCA8F3100FA0BD5 /* Main.storyboard */; };
 		9D5ECB621DCA8F3100FA0BD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5ECB611DCA8F3100FA0BD5 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D1846B71DDD07FA0079D933 /* QuizData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
+		9D1846B91DDD262F0079D933 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.txt; path = ../../data.txt; sourceTree = "<group>"; };
 		9D5ECB571DCA8F3100FA0BD5 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5ECB5A1DCA8F3100FA0BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5ECB5F1DCA8F3100FA0BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 		9D5ECB591DCA8F3100FA0BD5 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				9D1846B91DDD262F0079D933 /* data.txt */,
 				9D5ECB5A1DCA8F3100FA0BD5 /* AppDelegate.swift */,
 				9D5ECB5E1DCA8F3100FA0BD5 /* Main.storyboard */,
 				9D5ECB611DCA8F3100FA0BD5 /* Assets.xcassets */,
@@ -72,6 +77,7 @@
 				9DE662401DD42D0400189AE4 /* QuestionViewController.swift */,
 				9DE662461DD45EDD00189AE4 /* AnswerViewController.swift */,
 				9DE662481DD45EED00189AE4 /* ResultViewController.swift */,
+				9D1846B71DDD07FA0079D933 /* QuizData.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1846BA1DDD262F0079D933 /* data.txt in Resources */,
 				9D5ECB651DCA8F3100FA0BD5 /* LaunchScreen.storyboard in Resources */,
 				9D5ECB621DCA8F3100FA0BD5 /* Assets.xcassets in Resources */,
 				9D5ECB601DCA8F3100FA0BD5 /* Main.storyboard in Resources */,
@@ -148,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1846B81DDD07FA0079D933 /* QuizData.swift in Sources */,
 				9DE662471DD45EDD00189AE4 /* AnswerViewController.swift in Sources */,
 				9DD144681DCD45060018FAA2 /* QuizTableViewController.swift in Sources */,
 				9DE662491DD45EED00189AE4 /* ResultViewController.swift in Sources */,

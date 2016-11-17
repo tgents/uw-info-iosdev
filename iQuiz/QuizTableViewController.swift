@@ -10,102 +10,18 @@ import UIKit
 
 class QuizTableViewController: UITableViewController {
     
-    let questions =
-        ["Mathematics":
-            ["description":"stuff about math",
-             "icon": "mathicon",
-             "questions":
-                [
-                    [
-                        "text":"What is 2 + 2?",
-                        "answer":"1",
-                        "answers":
-                            [
-                                "4",
-                                "22",
-                                "An irrational number",
-                                "Nobody knows"
-                        ]
-                    ],
-                    [
-                        "text":"What is 10 ÷ 5?",
-                        "answer":"2",
-                        "answers":
-                            [
-                                "4",
-                                "2",
-                                "An irrational number",
-                                "Nobody knows"
-                        ]
-                    ]
-                ],
-            ],
-         "Marvel Super Heroes":
-            ["description":"super heros from Marvel",
-             "icon": "marvelicon",
-             "questions":
-                [
-                    [
-                        "text":"Who is Iron Man?",
-                        "answer":"1",
-                        "answers":
-                            [
-                                "Tony Stark",
-                                "Obadiah Stane",
-                                "A rock hit by Megadeth",
-                                "Nobody knows"
-                        ]
-                    ],
-                    [
-                        "text":"Who founded the X-Men?",
-                        "answer":"2",
-                        "answers":
-                            [
-                                "Tony Stark",
-                                "Professor X",
-                                "The X-Institute",
-                                "Erik Lensherr"
-                        ]
-                    ]
-                ],
-            ],
-         "Science":
-            ["description":"science!",
-             "icon": "scienceicon",
-             "questions":
-                [
-                    [
-                        "text":"What is fire?",
-                        "answer":"1",
-                        "answers":
-                            [
-                                "One of the four classical elements",
-                                "A magical reaction given to us by God",
-                                "A band that hasn't yet been discovered",
-                                "Fire! Fire! Fire! heh-heh"
-                        ]
-                    ],
-                    [
-                        "text":"What is ATP?",
-                        "answer":"4",
-                        "answers":
-                            [
-                                "One of those Jeep things",
-                                "A magical reaction given to us by God",
-                                "A band that hasn't yet been discovered",
-                                "Adenosine triphosphate"
-                        ]
-                    ]
-                ],
-            ]
-    ]
+    var questions:[[String:Any]]?
     
     var selectedQuestions:[Any]?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if(QuizData.shared.data != nil){
+            questions = QuizData.shared.data!
+        } else {
+            questions = [[String:Any]]()
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -132,18 +48,17 @@ class QuizTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
+        return questions!.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath) as! QuizTableViewCell
         
-        let key = Array(questions.keys)[indexPath.row]
-        let dictionary = questions[key]! as [String:Any]
-        cell.titleLabel.text = key
-        cell.descriptionLabel.text = dictionary["description"] as! String
-        cell.picture.image = UIImage(named: dictionary["icon"] as! String)
+        let dictionary = questions![indexPath.row] as [String:Any]
+        cell.titleLabel.text = dictionary["title"] as! String
+        cell.descriptionLabel.text = dictionary["desc"] as! String
+        cell.picture.image = UIImage(named: "quizicon")
 
         return cell
     }
@@ -152,9 +67,9 @@ class QuizTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
         let key = cell.titleLabel.text!
         print(key)
-        let dictionary = questions[key]! as [String:Any]
-        print(dictionary)
-        selectedQuestions = dictionary["questions"] as! [Any]
+        let dictionary = questions![indexPath.row] as [String:Any]
+        print(dictionary["questions"])
+        selectedQuestions = dictionary["questions"] as! [[String:Any]]
         performSegue(withIdentifier: "toQuestion", sender: self)
     }
     
