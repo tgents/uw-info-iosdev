@@ -21,11 +21,32 @@ open class TestMe {
 }
 
 ////////////////////////////////////
+// Domain Part 2
+//
+protocol Mathematics {
+  func add(_ to: Money) -> Money
+  func subtract(_ from: Money) -> Money
+}
+
+extension Double {
+  var USD: Money { return Money(amount: self, currency: Money.Currency.USD)}
+  var GBP: Money { return Money(amount: self, currency: Money.Currency.GBP) }
+  var EUR: Money { return Money(amount: self, currency: Money.Currency.EUR) }
+  var CAN: Money { return Money(amount: self, currency: Money.Currency.CAN) }
+  var YEN: Money { return Money(amount: self, currency: Money.Currency.YEN) }
+}
+
+////////////////////////////////////
 // Money
 //
-public struct Money {
+public struct Money: CustomStringConvertible, Mathematics {
+  
+  public var description: String {
+    return "\(currency)\(amount)"
+  }
+
   public let acceptedCurrencies = ["USD", "GBP", "EUR", "CAN"]
-  public var amount : Int
+  public var amount : Double
   public var currency : Currency
   
   public enum Currency {
@@ -33,6 +54,7 @@ public struct Money {
     case GBP
     case EUR
     case CAN
+    case YEN
   }
   
   public func convert(_ to: Currency) -> Money {
@@ -46,11 +68,13 @@ public struct Money {
       newAmount = newAmount * 3 / 2
     case Currency.CAN:
       newAmount = newAmount * 5 / 4
+    case Currency.YEN:
+      newAmount = newAmount * 100
     }
     return Money(amount: newAmount, currency: to)
   }
   
-  private func convertToUSD(amount: Int, currency: Currency) -> Int{
+  private func convertToUSD(amount: Double, currency: Currency) -> Double{
     switch currency{
     case Currency.USD:
       return amount
@@ -60,6 +84,8 @@ public struct Money {
       return amount * 2 / 3
     case Currency.CAN:
       return amount * 4 / 5
+    case Currency.YEN:
+      return amount / 100
     }
   }
   
@@ -79,10 +105,16 @@ public struct Money {
   }
 }
 
+
 ////////////////////////////////////
 // Job
 //
-open class Job {
+open class Job: CustomStringConvertible {
+  
+  public var description: String {
+    return "\(title) \(calculateIncome(1))"
+  }
+  
   fileprivate var title : String
   fileprivate var type : JobType
 
@@ -127,7 +159,11 @@ open class Job {
 ////////////////////////////////////
 // Person
 //
-open class Person {
+open class Person : CustomStringConvertible {
+  
+  public var description: String {
+    return "[Person: firstName:\(firstName) lastName:\(lastName) age:\(age) job:\(job) spouse:\(spouse)]"
+  }
   open var firstName : String = ""
   open var lastName : String = ""
   open var age : Int = 0
@@ -175,14 +211,21 @@ open class Person {
 ////////////////////////////////////
 // Family
 //
-open class Family {
+open class Family : CustomStringConvertible {
+  
+  public var description: String {
+    return "[Num: \(members.count), Income: \(householdIncome())]"
+  }
+  
   fileprivate var members : [Person] = []
   
   public init(spouse1: Person, spouse2: Person) {
-    spouse1.spouse = spouse2
-    spouse2.spouse = spouse1
-    members.append(spouse1)
-    members.append(spouse2)
+    if spouse1.spouse == nil && spouse2.spouse == nil {
+      spouse1.spouse = spouse2
+      spouse2.spouse = spouse1
+      members.append(spouse1)
+      members.append(spouse2)
+    }
   }
   
   open func haveChild(_ child: Person) -> Bool {
